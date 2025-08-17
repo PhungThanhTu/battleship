@@ -1,0 +1,17 @@
+
+.ship-cell {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  &.revealed {
+    opacity: .9;
+  }
+}
+
+.skull {
+  position: absolute;
+  width: 70%;
+  opacity: .3;
+}

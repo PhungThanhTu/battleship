@@ -1,0 +1,40 @@
+.scorched-cell {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 12px;
+  top: 20px;
+  text-align: center;
+
+  .particle {
+
+    background-image: radial-gradient(#fbff00 20%,#ff0000c7 80%);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: rise 1s ease-in infinite;
+    width: 10px;
+    height: 10px;
+  }
+
+  .particle:nth-of-type(2) {
+    animation-delay: .17s;
+    left: calc((100% - 1em)* 0);
+  }
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-0.5em) scale(0);
+  }
+}

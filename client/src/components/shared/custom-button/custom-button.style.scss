@@ -1,0 +1,11 @@
+.bs-button {
+  background-color: #18BC9C;
+  color: white;
+  height: 38px;
+
+  &:disabled {
+    border: none;
+    cursor: no-drop;
+    background-color: #d7fff7;
+  }
+}

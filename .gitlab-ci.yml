@@ -1,0 +1,47 @@
+image: node:20-alpine 
+stages:
+  - build
+  - test
+build-client:
+  stage: build
+  script:
+    - cd client
+    - npm ci
+  artifacts:
+    paths:
+      - client/node_modules
+
+build-server:
+  stage: build
+  script:
+    - cd server
+    - npm ci
+  artifacts:
+    paths:
+      - server/node_modules
+
+test-client:
+  stage: test
+  script:
+    - cd client
+    - npm run coverage
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: client/coverage/cobertura-coverage.xml
+      junit: client/junit/output.xml
+  needs: ["build-client"]
+
+test-server:
+  stage: test
+  script:
+    - cd server
+    - npm run coverage
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: server/coverage/cobertura-coverage.xml
+      junit: server/junit/output.xml
+  needs: ["build-server"]

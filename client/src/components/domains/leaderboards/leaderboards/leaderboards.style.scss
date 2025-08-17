@@ -1,0 +1,57 @@
+.leaderboards {
+    box-sizing: border-box;
+    margin: 10px auto 30px auto;
+    min-width: 528px;
+    min-height: 280px;
+    padding: 0 30px 0 30px;
+    box-shadow: #001b3814 0 4px 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    
+    .leaderboard-container {
+        width: 280px;
+
+        .leaderboards-title {
+            display: flex;
+            flex-direction: row;
+            margin: 20px auto 20px auto;
+            padding-bottom: 10px;
+            border-bottom: 0.75px #18bc9c solid;
+            justify-content: center;    
+            .cup-icon {
+                display: block;
+                background-image: url(/cup.svg);
+                width: 20px;
+                height: 20px;
+            }
+    
+            .leaderboard-text {
+                color: #17bc9c;
+                padding-left: 10px;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+
+            th {
+                text-align: start;
+                &.name-header {
+                    width: 100%;
+                }
+                &.score-header {
+                    color: #adb5bd;
+                    font-size: 14px;
+                    width: 50px;
+                }
+            }
+        }
+    }
+
+
+}

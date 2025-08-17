@@ -1,0 +1,18 @@
+POST http://localhost:3000/auth/authorize
+Content-Type: application/json
+
+{
+  "username": "hakaishin"
+}
+
+###
+GET http://localhost:3000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFiYyIsImlhdCI6MTcxODA2MTY1OH0.zpNTFk_pZcaHhemm8IkJ5ixQepT669AKJT2yiAL6oIM
+
+###
+GET http://localhost:3000/score-record?roomId=d9jcB
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvb2JhIiwiaWF0IjoxNzE4Njk2NzMxfQ.2kIANZykLDa8mOrXeUxb-4kKtpBDH4MQPLANdimrGmQ
+
+### 
+GET http://localhost:3000/room
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhha2Fpc2hpbiIsImlhdCI6MTcxOTIyMzA5Nn0.NtYS2zA37ukOhb6elI-BmneHAI805U0OO9xdQ5UuMsw

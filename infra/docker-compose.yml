@@ -1,0 +1,39 @@
+services:
+  mongo:
+    image: mongo
+    container_name: battleship-mongo
+    expose:
+      - 27017
+    restart: always
+  api:
+    image: battleship-api:dev
+    container_name: api
+    environment:
+      - MONGO=mongodb://mongo:27017/battleship
+      - JWT_SECRET=aksjhdasjkhzkjhczkhczxkjchzxjkcxzcxzhczxjkchzx
+      - PORT=3000
+    expose:
+      - 3000
+    depends_on:
+      - mongo
+    restart: always
+  server:
+    image: battleship-server:dev
+    container_name: server
+    environment:
+      - MONGO=mongodb://mongo:27017/battleship
+      - PORT=5000
+      - API_SERVER=http://api:3000
+    expose:
+      - 5000
+    depends_on:
+      - mongo
+    restart: always
+  client:
+    image: battleship-client:dev
+    container_name: client
+    environment:
+      - API=http://api:3000
+      - SOCKET=http://server:5000
+    ports:
+        - "5173:80"

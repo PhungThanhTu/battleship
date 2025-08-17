@@ -1,0 +1,25 @@
+.waiting-room-container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-width: 528px;
+    min-height: 280px;
+    padding: 0 30px 0 30px;
+    box-shadow: #001b3814 0 4px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+
+    .waiting-room-buttons {
+        width: 280px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
+        width: 120px;
+    }
+}

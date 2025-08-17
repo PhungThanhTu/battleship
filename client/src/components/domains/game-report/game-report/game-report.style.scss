@@ -1,0 +1,21 @@
+.game-report {
+    width: 100%;
+
+    .point-label {
+        font-weight: bold;
+        text-align: start;
+    }
+
+    .point-delta {
+        text-align: end;
+        font-weight: bold;
+    }
+
+    .green {
+        color: #18BC9C;
+    }
+
+    .red {
+        color: red;
+    }
+}
